@@ -1,0 +1,131 @@
+/* Contact section */
+.contact-section {
+    padding: var(--spacing-20) 0;
+    background-color: var(--color-background-alt);
+    transition: background-color var(--transition-normal);
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-12);
+}
+
+.info-items {
+    margin-top: var(--spacing-8);
+    margin-bottom: var(--spacing-8);
+}
+
+.info-item {
+    display: flex;
+    margin-bottom: var(--spacing-5);
+}
+
+.info-icon {
+    background-color: var(--color-primary);
+    color: var(--color-primary-text);
+    width: 40px;
+    height: 40px;
+    border-radius: var(--border-radius-full);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: var(--spacing-4);
+    font-size: var(--font-size-lg);
+}
+
+.info-item h3 {
+    font-size: var(--font-size-lg);
+    margin-bottom: var(--spacing-1);
+    color: var(--color-text);
+}
+
+.info-item p {
+    color: var(--color-text-muted);
+}
+
+.social-links h3 {
+    margin-bottom: var(--spacing-4);
+    color: var(--color-text);
+}
+
+.social-icons {
+    display: flex;
+    gap: var(--spacing-4);
+}
+
+.social-icons a {
+    display: inline-block;
+    background-color: var(--color-background-accent);
+    color: var(--color-text);
+    width: 40px;
+    height: 40px;
+    border-radius: var(--border-radius-full);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: background-color var(--transition-fast);
+}
+
+.social-icons a:hover {
+    background-color: var(--color-primary);
+    color: var(--color-primary-text);
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-5);
+}
+
+.form-group {
+    margin-bottom: var(--spacing-5);
+}
+
+label {
+    display: block;
+    margin-bottom: var(--spacing-1);
+    font-weight: 500;
+    color: var(--color-text);
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: var(--spacing-3);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius);
+    background-color: var(--color-background);
+    color: var(--color-text);
+    transition: border-color var(--transition-fast), background-color var(--transition-fast);
+}
+
+input:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: var(--color-primary);
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    font-weight: normal;
+}
+
+.checkbox-label input {
+    width: auto;
+    margin-right: var(--spacing-3);
+}
+
+.success-message {
+    text-align: center;
+    background-color: rgba(20, 184, 166, 0.1);
+    border: 1px solid var(--color-teal-500);
+    padding: var(--spacing-5);
+    border-radius: var(--border-radius-lg);
+    color: var(--color-text);
+}
+
+.success-message h3 {
+    color: var(--color-teal-500);
+    margin-bottom: var(--spacing-3);
+}

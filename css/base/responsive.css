@@ -1,0 +1,55 @@
+
+@media (max-width: 768px) {
+    .mobile-menu-btn {
+        display: block;
+    }
+    
+    .main-nav {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--color-background-alt);
+        padding: var(--spacing-5);
+        display: none;
+        border-bottom: 1px solid var(--color-border);
+        transition: background-color var(--transition-normal), border-color var(--transition-normal);
+    }
+    
+    .main-nav.active {
+        display: block;
+    }
+    
+    .main-nav ul {
+        flex-direction: column;
+    }
+    
+    .main-nav li {
+        margin: var(--spacing-3) 0;
+    }
+    
+    .class-grid,
+    .about-content,
+    .stats-grid,
+    .features,
+    .footer-grid,
+    .pricing-grid,
+    .blog-card.featured,
+    .contact-grid,
+    .trainers-grid,
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+    
+    .blog-card.featured .blog-image {
+        height: 200px;
+    }
+    
+    .pricing-card.popular {
+        transform: none;
+    }
+    
+    .pricing-card.popular:hover {
+        transform: translateY(-5px);
+    }
+}

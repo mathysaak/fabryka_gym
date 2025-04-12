@@ -1,0 +1,39 @@
+
+/* Import base */
+@import url('/css/base/base_styles.css');
+@import url('/css/base/responsive.css');
+@import url('/css/base/variables.css');
+/* Import componentes */
+@import url('/css/components/buttons.css');
+@import url('/css/components/hero.css');
+@import url('/css/components/horarios.css');
+@import url('/css/components/page_title.css');
+@import url('/css/components/stats.css');
+@import url('/css/components/testimonios.css');
+@import url('/css/components/theme.css');
+/* Import layout */
+@import url('/css/layout/footer.css');
+@import url('/css/layout/header.css');
+/* Import pages */
+@import url('/css/pages/about_section.css');
+@import url('/css/pages/blog_section.css');
+@import url('/css/pages/clases_section.css');
+@import url('/css/pages/contact_section.css');
+@import url('/css/pages/entrenadores_section.css');
+@import url('/css/pages/faq_section.css');
+@import url('/css/pages/map_section.css');
+@import url('/css/pages/precios_section.css');
+
+
+/* Container */
+.container {
+    width: 90%;
+    max-width: var(--container-xl);
+    margin: 0 auto;
+    padding: 0 var(--spacing-4);
+}
+
+/* Utility classes */
+.highlight {
+    color: var(--color-primary);
+}

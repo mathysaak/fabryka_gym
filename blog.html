@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - FabrykaGym</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header Navigation -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html"><span class="highlight">FABRYKA</span>GYM</a>
+            </div>
+            
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="clases.html">Clases</a></li>
+                    <li><a href="entrenadores.html">Entrenadores</a></li>
+                    <li><a href="precios.html">Precios</a></li>
+                    <li><a href="blog.html" class="active">Blog</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </nav>
+            
+            <div class="header-right">
+                <!-- Theme Toggle Button -->
+                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark/light mode">
+                    <!-- Sun icon for dark mode (shows when in dark mode) -->
+                     <img class="sun-icon" src="assets/svg/sun-icon.svg" alt="Ícono de sol" width="20" height="20">
+
+                    <!-- Moon icon for light mode (shows when in light mode) -->
+                     <img class="moon-icon" src="assets/svg/moon-icon.svg" alt="Ícono de luna" width="20" height="20"">
+
+                </button>
+                
+                <!-- Mobile Menu Button -->
+                <button class="mobile-menu-btn">Menú</button>
+            </div>
+        </div>
+        
+    </header>
+
+    <!-- Page Title -->
+    <section class="page-title">
+        <div class="container">
+            <h1>Blog de Fitness</h1>
+            <p>Consejos, rutinas y artículos sobre fitness, nutrición y bienestar.</p>
+        </div>
+    </section>
+
+    <!-- Blog Filter -->
+    <section class="blog-filter">
+        <div class="container">
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">Todos</button>
+                <button class="filter-btn" data-filter="entrenamiento">Entrenamiento</button>
+                <button class="filter-btn" data-filter="nutricion">Nutrición</button>
+                <button class="filter-btn" data-filter="bienestar">Bienestar</button>
+                <button class="filter-btn" data-filter="motivacion">Motivación</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Content -->
+    <section class="blog-section">
+        <div class="container">
+            <div class="blog-grid">
+                <!-- Featured Article -->
+                <article class="blog-card featured" data-category="entrenamiento">
+                    <div class="blog-image">
+
+                        <img width="600px" height="400" src="assets/images/clases2.jpg" alt="5 Ejercicios Compuestos para Maximizar tus Resultados">
+
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span class="blog-category">Entrenamiento</span>
+                            <span class="blog-date">Mayo 15, 2023</span>
+                        </div>
+                        <h2>5 Ejercicios Compuestos para Maximizar tus Resultados</h2>
+                        <p>
+                            Los ejercicios compuestos son aquellos que involucran múltiples grupos musculares y articulaciones. Son la clave para construir fuerza, ganar masa muscular y quemar calorías de manera eficiente.
+                        </p>
+                        <a href="#" class="btn-link">Leer más →</a>
+                    </div>
+                </article>
+                
+                <!-- Regular Articles -->
+                <article class="blog-card" data-category="nutricion">
+                    <div class="blog-image">
+
+                        <img src="assets/images/nutricion.jpeg" alt="Guía Completa de Nutrición Pre y Post Entrenamiento">
+                        <div class="placeholder-image">IMAGEN: Nutrición</div>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span class="blog-category">Nutrición</span>
+                            <span class="blog-date">Mayo 10, 2025</span>
+                        </div>
+                        <h2>Guía Completa de Nutrición Pre y Post Entrenamiento</h2>
+                        <p>
+                            Lo que comes antes y después de entrenar puede marcar una gran diferencia en tu rendimiento y recuperación. Aprende qué alimentos son ideales para cada momento.
+                        </p>
+                        <a href="#" class="btn-link">Leer más →</a>
+                    </div>
+                </article>
+                
+                <article class="blog-card" data-category="bienestar">
+                    <div class="blog-image">
+
+                        <img src="assets/images/dormir.jpeg" alt="Cómo Mejorar tu Calidad de Sueño para Optimizar tus Resultados"> 
+                        <div class="placeholder-image">IMAGEN: Sueño</div>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span class="blog-category">Bienestar</span>
+                            <span class="blog-date">Mayo 5, 2023</span>
+                        </div>
+                        <h2>Cómo Mejorar tu Calidad de Sueño para Optimizar tus Resultados</h2>
+                        <p>
+                            El sueño es fundamental para la recuperación muscular y el rendimiento deportivo. Descubre técnicas efectivas para mejorar tu descanso y potenciar tus resultados.
+                        </p>
+                        <a href="#" class="btn-link">Leer más →</a>
+                    </div>
+                </article>
+                
+                <article class="blog-card" data-category="motivacion">
+                    <div class="blog-image">
+
+                        <img src="assets/images/motivacion.jpeg" alt="7 Estrategias para Mantener la Motivación en tu Rutina de Ejercicios">
+                        <div class="placeholder-image">IMAGEN: Motivación</div>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span class="blog-category">Motivación</span>
+                            <span class="blog-date">Abril 28, 2025</span>
+                        </div>
+                        <h2>7 Estrategias para Mantener la Motivación en tu Rutina de Ejercicios</h2>
+                        <p>
+                            Mantener la constancia es uno de los mayores desafíos en el fitness. Aprende estrategias prácticas para mantener alta tu motivación incluso en los días más difíciles.
+                        </p>
+                        <a href="#" class="btn-link">Leer más →</a>
+                    </div>
+                </article>
+            </div>
+            
+            <!-- Pagination -->
+            <div class="pagination">
+                <a href="#" class="active">1</a>
+                <a href="#">2</a>
+                <a href="#">3</a>
+                <span>...</span>
+                <a href="#">Siguiente →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>© 2025 FabrykaGym. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mobile menu toggle
+            const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+            const mainNav = document.querySelector('.main-nav');
+            
+            mobileMenuBtn.addEventListener('click', function() {
+                mainNav.classList.toggle('active');
+            });
+            
+            // Blog filter
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const blogCards = document.querySelectorAll('.blog-card');
+            
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+
+                    filterBtns.forEach(btn => {
+                        btn.classList.remove('active');
+                    });
+                    
+
+                    btn.classList.add('active');
+                    
+
+                    const filterValue = btn.getAttribute('data-filter');
+                    
+
+                    blogCards.forEach(card => {
+                        if (filterValue === 'all' || card.getAttribute('data-category') === filterValue) {
+                            card.style.display = 'block';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        });
+
+
+    document.addEventListener('DOMContentLoaded', function() {
+
+        const themeToggle = document.getElementById('theme-toggle');
+        const sunIcon = document.querySelector('.sun-icon');
+        const moonIcon = document.querySelector('.moon-icon');
+        
+
+        const savedTheme = localStorage.getItem('theme');
+        const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        
+        // Set tema inicial
+        if (savedTheme) {
+            document.documentElement.setAttribute('data-theme', savedTheme);
+            updateIcons(savedTheme);
+        } else if (systemPrefersDark) {
+            document.documentElement.setAttribute('data-theme', 'dark');
+            updateIcons('dark');
+        } else {
+            document.documentElement.setAttribute('data-theme', 'light');
+            updateIcons('light');
+        }
+        
+        // Cambiar tema cuando se hace click
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            
+            document.documentElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            updateIcons(newTheme);
+        });
+        
+        // Actualiar iconos basados en el tema
+        function updateIcons(theme) {
+            if (theme === 'dark') {
+                sunIcon.style.display = 'block';
+                moonIcon.style.display = 'none';
+            } else {
+                sunIcon.style.display = 'none';
+                moonIcon.style.display = 'block';
+            }
+        }
+        
+        // Mobile menu
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const mainNav = document.querySelector('.main-nav');
+        
+        mobileMenuBtn.addEventListener('click', function() {
+            mainNav.classList.toggle('active');
+        });
+    });
+</script>
+</body>
+</html>

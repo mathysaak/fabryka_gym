@@ -1,0 +1,80 @@
+/* Header styles */
+.header {
+    background-color: var(--color-background-alt);
+    color: var(--color-text);
+    padding: var(--spacing-4) 0;
+    border-bottom: 1px solid var(--color-border);
+    position: sticky;
+    top: 0;
+    z-index: var(--z-index-sticky);
+    transition: background-color var(--transition-normal), border-color var(--transition-normal);
+}
+
+.logo a {
+    font-size: var(--font-size-2xl);
+    font-weight: bold;
+    text-decoration: none;
+    color: var(--color-text);
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+}
+
+.main-nav li {
+    margin-left: var(--spacing-5);
+}
+
+.main-nav a {
+    color: var(--color-text-muted);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color var(--transition-fast);
+}
+
+.main-nav a:hover, 
+.main-nav a.active {
+    color: var(--color-primary);
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-4);
+}
+
+.mobile-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--color-text);
+    font-size: var(--font-size-base);
+    cursor: pointer;
+}
+
+/* Section headers */
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: var(--spacing-8);
+}
+
+section h2 {
+    font-size: var(--font-size-3xl);
+    margin-bottom: var(--spacing-8);
+    text-align: center;
+}
+
+.view-all {
+    color: var(--color-primary);
+    text-decoration: none;
+    font-weight: 600;
+}

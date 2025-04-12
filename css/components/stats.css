@@ -1,0 +1,25 @@
+/* Stats section */
+.stats-section {
+    padding: var(--spacing-20) 0;
+    background-color: var(--color-primary);
+    color: var(--color-primary-text);
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--spacing-8);
+    text-align: center;
+}
+
+.stat-item {
+    background-color: rgba(0, 0, 0, 0.1);
+    padding: var(--spacing-8);
+    border-radius: var(--border-radius-lg);
+}
+
+.stat-number {
+    font-size: var(--font-size-4xl);
+    font-weight: 700;
+    margin-bottom: var(--spacing-1);
+}
