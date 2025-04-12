@@ -24,12 +24,12 @@ El proyecto utiliza HTML5 y CSS3 con una estructura modular para garantizar mant
 ## 📁 Estructura de Carpetas
 fabryka_gym/
 ├── assets/
-│   ├── gif/                # Animaciones para elementos dinámicos
-│   ├── images/             # Imágenes estáticas (logos, fotos, etc.)
-│   └── vsg/                # Gráficos vectoriales (si aplica)
+│   ├── gif/             # Animaciones para elementos dinámicos
+│   ├── images/          # Imágenes estáticas (logos, fotos, etc.)
+│   └── vsg/             # Gráficos vectoriales (si aplica)
 ├── css/
 │   ├── base/
-│   │   ├── base.css        # Estilos base (reset, tipografía, etc.)
+│   │   ├── base.css     # Estilos base (reset, tipografía, etc.)
 │   │   ├── responsive.css  # Media queries para adaptabilidad
 │   │   └── variables.css   # Variables CSS (colores, tamaños, etc.)
 │   ├── components/
@@ -44,25 +44,23 @@ fabryka_gym/
 │   │   ├── footer.css      # Estilos del pie de página
 │   │   └── header.css      # Estilos de la cabecera
 │   ├── pages/
-│   │   ├── about-section.css    # Estilos de la sección "Sobre nosotros"
-│   │   ├── blog-section.css     # Estilos de la sección de blog
-│   │   ├── clases-section.css   # Estilos de la sección de clases
-│   │   ├── contact-section.css  # Estilos de la sección de contacto
-│   │   ├── entrenadores-section.css # Estilos de la sección de entrenadores
-│   │   ├── faq-section.css      # Estilos de la sección de preguntas frecuentes
-│   │   ├── map-section.css      # Estilos para el mapa
-│   │   └── precios-section.css  # Estilos de la sección de precios
-│   └── styles.css          # Archivo principal que importa todos los estilos
+│   │   ├── about-section.css      # Estilos de la sección "Sobre nosotros"
+│   │   ├── blog-section.css       # Estilos de la sección de blog
+│   │   ├── clases-section.css     # Estilos de la sección de clases
+│   │   ├── contact-section.css    # Estilos de la sección de contacto
+│   │   ├── entrenadores-section.css  # Estilos de la sección de entrenadores
+│   │   ├── faq-section.css        # Estilos de la sección de preguntas frecuentes
+│   │   ├── map-section.css        # Estilos para el mapa
+│   │   └── precios-section.css    # Estilos de la sección de precios
+│   └── styles.css        # Archivo principal que importa todos los estilos
 ├── html/
-│   ├── blog.html           # Página de blog
-│   ├── clases.html         # Página de clases
-│   ├── contacto.html       # Página de contacto
-│   ├── entrenadores.html   # Página de entrenadores
-│   ├── precios.html        # Página de precios
-│   └── index.html          # Página principal
-└── README.md               # Documentación del proyecto
-
-
+│   ├── blog.html         # Página de blog
+│   ├── clases.html       # Página de clases
+│   ├── contacto.html     # Página de contacto
+│   ├── entrenadores.html # Página de entrenadores
+│   ├── precios.html      # Página de precios
+│   └── index.html        # Página principal
+└── README.md             # Documentación del proyecto
 ---
 
 ## 🎨 Decisiones de Diseño
