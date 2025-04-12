@@ -1,28 +1,28 @@
 
 /* Import base */
-@import url('/base/base_styles.css');
-@import url('/base/responsive.css');
-@import url('/base/variables.css');
+@import url('/css/base/base_styles.css');
+@import url('/css/base/responsive.css');
+@import url('/css/base/variables.css');
 /* Import componentes */
-@import url('/components/buttons.css');
-@import url('/components/hero.css');
-@import url('/components/horarios.css');
-@import url('/components/page_title.css');
-@import url('/components/stats.css');
-@import url('/components/testimonios.css');
-@import url('/components/theme.css');
+@import url('/css/components/buttons.css');
+@import url('/css/components/hero.css');
+@import url('/css/components/horarios.css');
+@import url('/css/components/page_title.css');
+@import url('/css/components/stats.css');
+@import url('/css/components/testimonios.css');
+@import url('/css/components/theme.css');
 /* Import layout */
-@import url('/layout/footer.css');
-@import url('/layout/header.css');
+@import url('/css/layout/footer.css');
+@import url('/css/layout/header.css');
 /* Import pages */
-@import url('/pages/about_section.css');
-@import url('/pages/blog_section.css');
-@import url('/pages/clases_section.css');
-@import url('/pages/contact_section.css');
-@import url('/pages/entrenadores_section.css');
-@import url('/pages/faq_section.css');
-@import url('/pages/map_section.css');
-@import url('/pages/precios_section.css');
+@import url('/css/pages/about_section.css');
+@import url('/css/pages/blog_section.css');
+@import url('/css/pages/clases_section.css');
+@import url('/css/pages/contact_section.css');
+@import url('/css/pages/entrenadores_section.css');
+@import url('/css/pages/faq_section.css');
+@import url('/css/pages/map_section.css');
+@import url('/css/pages/precios_section.css');
 
 
 /* Container */
