@@ -17,21 +17,8 @@ El proyecto utiliza HTML5 y CSS3 con una estructura modular para garantizar mant
 
 - **Repositorio:** [github.com/mathysaak/fabryka_gym](https://github.com/mathysaak/fabryka_gym)
 - **Sitio Web Desplegado:** [mathysaak.github.io/fabryka_gym](https://mathysaak.github.io/fabryka_gym)
-- **Video Demostrativo:** Ver en Google Drive
+- **Video Demostrativo:** 
 
----
-
-## 📁 Estructura de Carpetas
-fabryka_gym/
-├── assets/
-├── css/
-│   ├── base/
-│   ├── components/
-│   ├── layout/
-│   ├── pages/
-│   └── styles.css
-├── html/
-└── README.md
 ---
 
 ## 🎨 Decisiones de Diseño
