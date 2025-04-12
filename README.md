@@ -29,9 +29,9 @@ fabryka_gym/
 │   ├── components/
 │   ├── layout/
 │   ├── pages/
-│   └── styles.css        # Archivo principal que importa todos los estilos
+│   └── styles.css
 ├── html/
-└── README.md             # Documentación del proyecto
+└── README.md
 ---
 
 ## 🎨 Decisiones de Diseño
