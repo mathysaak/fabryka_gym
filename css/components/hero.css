@@ -1,7 +1,7 @@
 /* Hero section styles */
 .hero {
     background-color: var(--color-background);
-    background-image: url('/assets/gif/portada.gif');
+    background-image: url('../../assets/gif/portada.gif');
     background-size: cover;
     background-position: center;
     color: var(--color-text);
