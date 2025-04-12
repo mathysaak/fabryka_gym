@@ -1,18 +1,59 @@
-/* Page title styles */
+/* Page title styles c/acrylic */
 .page-title {
-    background-color: var(--color-primary);
-    color: var(--color-primary-text);
+    position: relative;
     padding: var(--spacing-16) 0;
     text-align: center;
+    overflow: hidden; /* Para contener el pseudo-elemento */
+    color: var(--color-primary-text);
+}
+
+/* Fondo con GIF */
+.page-title::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('/assets/gif/Lateral_Raise_GIF.gif');
+    background-size: cover;
+    background-position: center;
+    z-index: -2;
+}
+
+/* Efecto acrílico */
+.page-title::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--color-primary);
+    opacity: 0.45; /* Ajustar la opacidad  */
+    z-index: -1;
+    .page-title::after {
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+    }
+}
+
+
+/* Contenedor para asegurar el efecto acrílico */
+.page-title .container {
+    position: relative;
+    z-index: 1;
 }
 
 .page-title h1 {
     font-size: var(--font-size-4xl);
     margin-bottom: var(--spacing-3);
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
 }
 
 .page-title p {
     font-size: var(--font-size-xl);
     max-width: 600px;
     margin: 0 auto;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
 }

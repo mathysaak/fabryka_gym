@@ -1,8 +1,16 @@
 /* Blog section */
 .blog-section {
-    padding: var(--spacing-16) 0;
+    padding: var(--spacing-16) 10;
     background-color: var(--color-background);
     transition: background-color var(--transition-normal);
+}
+/* Reducción radical del blog-filter */
+.blog-filter {
+    height: auto; /* Elimina cualquier altura fija */
+    min-height: 0; /* Elimina altura mínima */
+    margin: 0; /* Sin márgenes */
+    padding: var(--spacing-1) 0; /* Mínimo padding vertical */
+    overflow: visible; /* Asegura que no haya recorte */
 }
 
 .blog-grid {
@@ -73,7 +81,7 @@
 .blog-content {
     padding: var(--spacing-5);
     position: relative; /* Para estar sobre la imagen */
-    z-index: 1; /* Encima de la imagen de fondo */
+    z-index:1; /* Encima de la imagen de fondo */
     color: var(--color-text); /* Asegura legibilidad */
 }
 
@@ -108,6 +116,7 @@
     color: var(--color-text);
 }
 
+/* Estilos existentes de paginación (sin cambios) */
 .pagination {
     display: flex;
     justify-content: center;

@@ -196,51 +196,47 @@
         <div class="container">
             <div class="stats-grid">
                 <div class="stat-item">
-                    <div class="stat-number">500+</div>
-                    <p>Socios Activos</p>
+                    <div class="stat-number" data-value="500">0</div> <!-- Valor inicial 0, animará a 500 -->
+                <p>Socios Activos</p>
+                    
                 </div>
                 <div class="stat-item">
-                    <div class="stat-number">30</div>
+                    <div class="stat-number" data-value="30">0</div>
                     <p>Entrenadores Expertos</p>
                 </div>
                 <div class="stat-item">
-                    <div class="stat-number">45</div>
+                    <div class="stat-number" data-value="45">0</div>
                     <p>Clases Semanales</p>
                 </div>
                 <div class="stat-item">
-                    <div class="stat-number">10</div>
+                    <div class="stat-number" data-value="10">0</div>
                     <p>Años de Experiencia</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Testimonials Section -->
-    <section class="testimonials-section">
-        <div class="container">
-            <h2>Lo Que Dicen Nuestros Socios</h2>
-
-            <div class="testimonial">
-                <div class="testimonial-content">
-                    <div class="testimonial-image">
-
-                        <img width="100" src="assets/images/testimonio.jpg" alt="María García">
-
-                        <div class="placeholder-image-small">Foto</div>
-                    </div>
-                    <div class="testimonial-text">
-                        <h3>María García</h3>
-                        <p class="client-info">Socia desde 2020</p>
-                        <div class="rating">★★★★★</div>
-                        <p class="quote">"Desde que me uní a FabrykaGym, mi vida ha cambiado completamente. El ambiente
-                            y la energía del lugar son incomparables. Los entrenadores son increíbles y siempre están
-                            dispuestos a ayudar."</p>
-                    </div>
-                </div>
+<!-- Testimonials Section -->
+<section class="testimonials-section">
+    <div class="container">
+        <h2>LO QUE DICEN NUESTROS SOCIOS</h2>
+        
+        <div class="testimonial-container">
+            <!-- Spinner de carga -->
+            <div class="testimonial-spinner" id="testimonialSpinner">
+                <div class="spinner"></div>
             </div>
-
+            
+            <!-- Carrusel de testimonios -->
+            <div class="testimonial-carousel" id="testimonialCarousel">
+                <!-- Los slides se generarán dinámicamente con JavaScript -->
+            </div>
+            
+            <!-- Puntos indicadores -->
+            <div class="carousel-dots" id="carouselDots"></div>
         </div>
-    </section>
+    </div>
+</section>
 
     <!-- Footer -->
     <footer class="footer">
@@ -296,31 +292,142 @@
 
 
     <script>
+        document.addEventListener('DOMContentLoaded', function() {
+    // Datos de ejemplo (puedes reemplazar con una llamada API real)
+    const testimonios = [
+        {
+            nombre: "María García",
+            desde: "2020",
+            rating: 5,
+            imagen: "assets/images/testimonio.jpg",
+            texto: "Desde que me uní a FabrykaGym, mi vida ha cambiado completamente. El ambiente y la energía del lugar son incomparables. Los entrenadores son increíbles y siempre están dispuestos a ayudar."
+        },
+        {
+            nombre: "Carlos Martínez",
+            desde: "2021",
+            rating: 4,
+            imagen: "assets/images/testimonio2.jpeg",
+            texto: "El mejor gimnasio de la ciudad. Equipamiento de primera calidad y entrenadores profesionales que realmente se preocupan por tu progreso."
+        },
+        {
+            nombre: "Ana López",
+            desde: "2019",
+            rating: 5,
+            imagen: "assets/images/testimonio3.jpeg",
+            texto: "He probado varios gimnasios y FabrykaGym es sin duda el mejor. Las instalaciones son impecables y las clases grupales son muy motivadoras."
+        }
+    ];
 
-        document.addEventListener('DOMContentLoaded', function () {
+    // Elementos del DOM
+    const spinner = document.getElementById('testimonialSpinner');
+    const carousel = document.getElementById('testimonialCarousel');
+    const dotsContainer = document.getElementById('carouselDots');
+    
+    let currentSlide = 0;
+    let slides = [];
+    let dots = [];
 
-            const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-            const mainNav = document.querySelector('.main-nav');
-
-
-            mobileMenuBtn.addEventListener('click', function () {
-                mainNav.classList.toggle('active');
-            });
+    // Función para renderizar testimonios
+    function renderTestimonios() {
+        carousel.innerHTML = '';
+        dotsContainer.innerHTML = '';
+        
+        testimonios.forEach((testimonio, index) => {
+            // Crear slide
+            const slide = document.createElement('div');
+            slide.className = 'testimonial-slide';
+            slide.innerHTML = `
+                <div class="testimonial-content ${index === 0 ? 'active' : ''}">
+                    <div class="testimonial-image">
+                        <img width="100" src="${testimonio.imagen}" alt="${testimonio.nombre}">
+                    </div>
+                    <div class="testimonial-text">
+                        <h3>${testimonio.nombre}</h3>
+                        <p class="client-info">Socio desde ${testimonio.desde}</p>
+                        <div class="rating">${'★'.repeat(testimonio.rating)}${'☆'.repeat(5 - testimonio.rating)}</div>
+                        <p class="quote">"${testimonio.texto}"</p>
+                    </div>
+                </div>
+            `;
+            carousel.appendChild(slide);
+            slides.push(slide);
+            
+            // Crear punto indicador
+            const dot = document.createElement('div');
+            dot.className = `dot ${index === 0 ? 'active' : ''}`;
+            dot.addEventListener('click', () => goToSlide(index));
+            dotsContainer.appendChild(dot);
+            dots.push(dot);
         });
+    }
 
+    // Función para cambiar de slide
+    function goToSlide(index) {
+        // Validar índice
+        if (index < 0) index = testimonios.length - 1;
+        if (index >= testimonios.length) index = 0;
+        
+        // Actualizar estado
+        currentSlide = index;
+        
+        // Mover carrusel
+        carousel.style.transform = `translateX(-${currentSlide * 100}%)`;
+        
+        // Actualizar clases activas
+        slides.forEach((slide, i) => {
+            const content = slide.querySelector('.testimonial-content');
+            if (i === index) {
+                content.classList.add('active');
+            } else {
+                content.classList.remove('active');
+            }
+        });
+        
+        // Actualizar puntos
+        dots.forEach((dot, i) => {
+            dot.classList.toggle('active', i === index);
+        });
+    }
 
+    // Simular carga de datos
+    function simulateDataLoad() {
+        // Mostrar spinner
+        spinner.classList.remove('hidden');
+        
+        // Simular retardo de red (2 segundos)
+        setTimeout(() => {
+            // Renderizar testimonios
+            renderTestimonios();
+            
+            // Ocultar spinner
+            spinner.classList.add('hidden');
+            
+            // Iniciar rotación automática (cada 5 segundos)
+            setInterval(() => {
+                goToSlide(currentSlide + 1);
+            }, 5000);
+        }, 2000);
+    }
 
+    // Iniciar la carga cuando la sección sea visible
+    const observer = new IntersectionObserver((entries) => {
+        if (entries[0].isIntersecting) {
+            simulateDataLoad();
+            observer.disconnect();
+        }
+    }, { threshold: 0.1 });
+
+    observer.observe(document.querySelector('.testimonials-section'));
+});
         document.addEventListener('DOMContentLoaded', function () {
-
+            // Tema y menú móvil (código existente)
             const themeToggle = document.getElementById('theme-toggle');
             const sunIcon = document.querySelector('.sun-icon');
             const moonIcon = document.querySelector('.moon-icon');
-
-
+        
             const savedTheme = localStorage.getItem('theme');
             const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-
-
+        
             if (savedTheme) {
                 document.documentElement.setAttribute('data-theme', savedTheme);
                 updateIcons(savedTheme);
@@ -331,18 +438,15 @@
                 document.documentElement.setAttribute('data-theme', 'light');
                 updateIcons('light');
             }
-
-
+        
             themeToggle.addEventListener('click', () => {
                 const currentTheme = document.documentElement.getAttribute('data-theme');
                 const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-
                 document.documentElement.setAttribute('data-theme', newTheme);
                 localStorage.setItem('theme', newTheme);
                 updateIcons(newTheme);
             });
-
-
+        
             function updateIcons(theme) {
                 if (theme === 'dark') {
                     sunIcon.style.display = 'block';
@@ -352,16 +456,56 @@
                     moonIcon.style.display = 'block';
                 }
             }
-
-
+        
             const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
             const mainNav = document.querySelector('.main-nav');
-
+        
             mobileMenuBtn.addEventListener('click', function () {
                 mainNav.classList.toggle('active');
             });
+        
+            // Animación de contadores
+            const statNumbers = document.querySelectorAll('.stat-number');
+        
+            function animateCounter(element, start, end, duration) {
+                let startTime = null;
+        
+                function step(timestamp) {
+                    if (!startTime) startTime = timestamp;
+                    const progress = Math.min((timestamp - startTime) / duration, 1);
+                    const value = Math.floor(progress * (end - start) + start);
+                    element.textContent = value + (end === 500 ? '+' : ''); // Añade '+' solo para 500
+                    if (progress < 1) {
+                        requestAnimationFrame(step);
+                    }
+                }
+        
+                requestAnimationFrame(step);
+            }
+        
+            function startAnimations() {
+                statNumbers.forEach((number, index) => {
+                    const value = parseInt(number.getAttribute('data-value'));
+                    number.parentElement.style.animationDelay = `${index * 0.2}s`; // Retraso escalonado
+                    animateCounter(number, 0, value, 2000); // 2 segundos
+                });
+            }
+        
+            // Usar IntersectionObserver para activar la animación cuando la sección sea visible
+            const statsSection = document.querySelector('.stats-section');
+            const observer = new IntersectionObserver(
+                (entries) => {
+                    if (entries[0].isIntersecting) {
+                        startAnimations();
+                        observer.disconnect(); // Animar solo una vez
+                    }
+                },
+                { threshold: 0.5 } // Activar cuando el 50% de la sección sea visible
+            );
+        
+            observer.observe(statsSection);
         });
-    </script>
+        </script>
 </body>
 
 </html>

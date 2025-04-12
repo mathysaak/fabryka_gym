@@ -1,8 +1,7 @@
 /* Testimonials section */
 .testimonials-section {
-    padding: var(--spacing-20) 0;
-    background-color: var(--color-background-alt);
-    transition: background-color var(--transition-normal);
+    position: relative;
+    overflow: hidden;
 }
 
 .testimonial {
@@ -16,7 +15,25 @@
 
 .testimonial-content {
     display: flex;
-    align-items: flex-start;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.5s ease;
+}
+.testimonial-content.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+.testimonial-slide {
+    min-width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+.testimonial-content.loaded {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .testimonial-image {
@@ -44,4 +61,73 @@
     font-style: italic;
     margin-top: var(--spacing-3);
     color: var(--color-text);
+}
+.testimonial-container {
+    position: relative;
+    min-height: 300px; /* Altura fija para evitar saltos */
+    margin: 10px
+}
+
+.testimonial-spinner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-background);
+    z-index: 10;
+    transition: opacity 0.5s ease;
+}
+
+.testimonial-spinner.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    border-top-color: var(--color-primary);
+    animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+.testimonial-carousel {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+.carousel-controls {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    gap: 10px;
+}
+
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    gap: 8px;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: var(--color-border);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.dot.active {
+    background-color: var(--color-primary);
+    transform: scale(1.2);
 }

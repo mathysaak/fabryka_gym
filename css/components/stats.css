@@ -16,10 +16,25 @@
     background-color: rgba(0, 0, 0, 0.1);
     padding: var(--spacing-8);
     border-radius: var(--border-radius-lg);
+    position: relative; /* Para posicionar el spinner */
+    opacity: 0; /* Oculta inicialmente para animación de entrada */
+    animation: fadeIn 0.5s ease-out forwards; /* Animación de entrada */
 }
 
 .stat-number {
     font-size: var(--font-size-4xl);
     font-weight: 700;
     margin-bottom: var(--spacing-1);
+}
+
+/* Keyframes para la animación de entrada de stat-item */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }

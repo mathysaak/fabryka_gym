@@ -12,3 +12,20 @@ body {
     background-color: var(--color-background);
     transition: background-color var(--transition-normal), color var(--transition-normal);
 }
+
+/* Scroll Snap  */
+html {
+    scroll-snap-type: y proximity;
+    scroll-behavior: smooth;
+  }
+  
+  section {
+    scroll-snap-align: var(--scroll-snap-align);
+    min-height: 40vh;
+  }
+
+  @media (max-width: 768px) {
+    html {
+      scroll-snap-type: none;
+    }
+  }
